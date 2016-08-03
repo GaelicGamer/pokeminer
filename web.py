@@ -175,10 +175,12 @@ def get_worker_markers():
 def get_map():
     map_center = utils.get_map_center()
     fullmap = Map(
-        identifier='fullmap2',
+        identifier='fullmap',
         style='height:100%;width:100%;top:0;left:0;position:absolute;z-index:200;',
         lat=map_center[0],
         lng=map_center[1],
+        offsetWidth=0,
+        offsetHeight=0,
         markers=[],  # will be fetched by browser
         zoom='15',
     )
