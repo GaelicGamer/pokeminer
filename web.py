@@ -23,6 +23,7 @@ REQUIRED_SETTINGS = (
     'AREA_NAME',
     'REPORT_SINCE',
     'SCAN_RADIUS',
+    'GOOGLE_API_KEY'
 )
 for setting_name in REQUIRED_SETTINGS:
     if not hasattr(app_config, setting_name):
@@ -36,7 +37,7 @@ with open('locales/pokemon.en.json') as f:
     pokemon_names = json.load(f)
 
 
-GOOGLEMAPS_KEY = credentials.get('gmaps_key', None)
+GOOGLEMAPS_KEY = app_config.GOOGLE_API_KEY
 AUTO_REFRESH = 45  # refresh map every X s
 
 
